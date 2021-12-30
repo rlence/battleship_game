@@ -1,0 +1,113 @@
+/* - GENERAL - */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+  /* disable text selection feature */
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  user-select: none !important;
+}
+
+body {
+  min-height: 100vh;
+  background: url("../img/battleship_bg.jpg") no-repeat;
+  background-size: cover;
+  opacity: 0.90;
+  /* background-color: ghostwhite; */
+}
+
+body::before {
+  
+}
+
+header {
+  margin-top: 30px;
+}
+
+h1 {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 2.6em;
+  text-align: center;
+}
+
+p {
+  font-family: 'Inconsolata', monospace;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+/* -- MAIN CONTENT -- */
+#game-board {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: end;
+  align-content: end;
+
+  text-align: center;
+
+  margin: auto;
+  /* padding: 0 24px 0 0;  */
+  padding: 0;
+
+  width: 40vw;
+  height: 40vw;
+  box-shadow: 25px 25px 9px -20px #00000024;
+}
+
+#game-board > div {
+  font-family: 'Inconsolata', monospace;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+.blank_guide {
+  width: 10%;
+  height: auto;
+}
+
+/* --- HORIZONTAL GUIDES --- */
+.h_guide {
+  background-color: #bdbdbd;
+  border: 0.5px solid #d1d1d1;
+  width: 10%;
+  height: auto;
+}
+
+/* --- VERTICAL GUIDES --- */
+.v_guide {
+  width: 10%;
+  height: 10%;
+}
+
+.v_guide > span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #bdbdbd;
+  border: 0.5px solid #d1d1d1;
+
+  width: 50%;
+  height: 100%;  
+
+  margin-right: 0;
+  margin-left: auto;
+}
+
+/* -- SQUARES -- */
+.square {
+  background-color: #eaeaea;
+  border: 0.5px solid #d1d1d1;
+  width: 10%;
+  height: 10%;
+  cursor: pointer;
+}
+
+.square:hover {
+  background-color: #dadada;
+}

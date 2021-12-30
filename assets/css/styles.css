@@ -13,63 +13,73 @@
 }
 
 body {
-  min-height: 100vh;
-  background-color: ghostwhite;
+  background: url("../img/battleship_bg.jpg") no-repeat;
+  background-size: cover;
+  opacity: 0.9;
 }
 
 h1 {
-  font-family: 'Bebas Neue', cursive;
+  font-family: "Bebas Neue", cursive;
   font-size: 2.6em;
-  text-align: center;
 }
 
 p {
-  font-family: 'Inconsolata', monospace;
+  font-family: "Inconsolata", monospace;
   font-size: 1.2em;
-  text-align: center;
 }
 
 /* -- MAIN CONTENT -- */
+.container {
+  min-height: 100vh;
+}
+
+main > div.wrapper {
+  padding-left: 1em;
+  padding-right: 2em;
+}
+
 #game-board {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-
-  text-align: center;
-
-  margin: auto;
-  padding: 0 24px 0 0; 
-
-  width: 480px;
-  height: 480px;
+  box-shadow: 25px 25px 9px -20px #00000024;
 }
 
 #game-board > div {
-  font-family: 'Inconsolata', monospace;
+  font-family: "Inconsolata", monospace;
   font-weight: bold;
   font-size: 1em;
 }
 
-.blank_guide {
+/* --- HORIZONTAL GUIDES / VERTICAL GUIDES / SQUARES -- */
+.square, .blank_guide, .h_guide, .v_guide {
   width: 10%;
-  height: auto;
 }
 
-/* --- HORIZONTAL GUIDES --- */
+.square {
+  background-color: #eaeaea;
+  border: 0.5px solid #d1d1d1;
+}
+
+.square:hover {
+  background-color: #dadada;
+  cursor: pointer;
+}
+
+.square::before, .v_guide::before { /* With this, we force the div aspect ratio to 1:1 (height = widt) */
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+
 .h_guide {
+  text-align: center;
   background-color: #bdbdbd;
   border: 0.5px solid #d1d1d1;
-  width: 10%;
-  height: auto;
 }
 
-/* --- VERTICAL GUIDES --- */
 .v_guide {
-  width: 10%;
-  height: 10%;
-}
+  display: flex;
+  justify-content: end;
+  align-items: stretch;
+} 
 
 .v_guide > span {
   display: flex;
@@ -78,23 +88,5 @@ p {
 
   background-color: #bdbdbd;
   border: 0.5px solid #d1d1d1;
-
-  width: 50%;
-  height: 100%;  
-
-  margin-right: 0;
-  margin-left: auto;
-}
-
-/* -- SQUARES -- */
-.square {
-  background-color: #eaeaea;
-  border: 0.5px solid #d1d1d1;
-  width: 10%;
-  height: 10%;
-  cursor: pointer;
-}
-
-.square:hover {
-  opacity: 0.5;
+  width: 50%;  
 }

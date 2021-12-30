@@ -6,7 +6,7 @@
 
   <meta charset="UTF-8" />
   <meta name="description" content="Battleship game with Vanilla JS" />
-  <meta name="keywords" content="HTML, CSS, JavaScript" />
+  <meta name="keywords" content="HTML, CSS, JavaScript, Bootstrap" />
   <meta name="author" content="Jose Clemente García Rodríguez" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -15,117 +15,127 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inconsolata:wght@300&display=swap" rel="stylesheet">
 
+  <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="./assets/css/styles.css" type="text/css" />
 </head>
 <body>
-  <header>
-    <h1>&#9601;Battleship Game&#9601;</h1>
-    <p>Click and fire!💣</p>
-  </header>
+  <div class="container">
+    <header class="row justify-content-center mt-4 mb-2">
+      <div class="col-12 text-center">
+        <h1>&#9601;Battleship Game&#9601;</h1>
+        <p>Click and fire!💣</p>
+      </div>
+    </header>
 
-  <main id="game-board">
-    <div class="blank_guide"></div>
-    <div class="h_guide">1</div>
-    <div class="h_guide">2</div>
-    <div class="h_guide">3</div>
-    <div class="h_guide">4</div>
-    <div class="h_guide">5</div>
-    <div class="h_guide">6</div>
-    <div class="h_guide">7</div>
-    <div class="h_guide">8</div>
-    <div class="h_guide">9</div>
-    <div class="v_guide"><span>1</span></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="v_guide"><span>2</span></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="v_guide"><span>3</span></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="v_guide"><span>4</span></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="v_guide"><span>5</span></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="v_guide"><span>6</span></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="v_guide"><span>7</span></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="v_guide"><span>8</span></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="v_guide"><span>9</span></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-  </main>
+    <main class="row">
+      <div class="col-12 d-flex justify-content-center wrapper">
+        <div class="col-12 col-md-11 col-lg-8 col-xl-5 d-flex flex-wrap justify-content-center align-items-end align-content-end text-center p-0" id="game-board">
+          <div class="blank_guide"></div>
+          <div class="h_guide">1</div>
+          <div class="h_guide">2</div>
+          <div class="h_guide">3</div>
+          <div class="h_guide">4</div>
+          <div class="h_guide">5</div>
+          <div class="h_guide">6</div>
+          <div class="h_guide">7</div>
+          <div class="h_guide">8</div>
+          <div class="h_guide">9</div>
+          <div class="v_guide"><span>1</span></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="v_guide"><span>2</span></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="v_guide"><span>3</span></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="v_guide"><span>4</span></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="v_guide"><span>5</span></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="v_guide"><span>6</span></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="v_guide"><span>7</span></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="v_guide"><span>8</span></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="v_guide"><span>9</span></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+        </div>
+      </div>
+    </main>
+  </div>
 
+  <script src="./assets/js/bootstrap.bundle.min.js"></script>
   <script src="./assets/js/app.js"></script>
 </body>
 </html>
