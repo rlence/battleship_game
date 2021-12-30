@@ -16,6 +16,14 @@ pip3 install flask && python3 server.py
 
 <https://github.com/breatheco-de/exercise-battleship-vanillajs>
 
+## Instructions 📄
+
+* The ships are placed according to the defined object.
+* The positions of the ships can be revealed by clicking on the ***Show Ships*** button.
+* The user can restart the game by clicking on the ***Restart*** button.
+* The user can be fire by clicking in each box of the board game or by clicking on the ***Fire*** button and introducing the *x* and *y* coordinates in comma separated format.
+* The game will end when the user has sunk all the ships.
+
 ## Direct live demo 🎬
 
 <https://raw.githack.com/m4n50n/battleship_game/main/index.html>
