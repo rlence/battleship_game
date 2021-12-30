@@ -1,22 +1,131 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <link rel="icon" type="image/x-icon" href="./assets/img/html-5.ico" />
-    <title>Battleship game with Vanilla JS</title>
+<head>
+  <link rel="icon" type="image/x-icon" href="./assets/img/html-5.ico" />
+  <title>Battleship game with Vanilla JS</title>
 
-    <meta charset="UTF-8" />
-    <meta name="description" content="Battleship game with Vanilla JS" />
-    <meta name="keywords" content="HTML, CSS, JavaScript, Bootstrap" />
-    <meta name="author" content="Jose Clemente García Rodríguez" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta charset="UTF-8" />
+  <meta name="description" content="Battleship game with Vanilla JS" />
+  <meta name="keywords" content="HTML, CSS, JavaScript" />
+  <meta name="author" content="Jose Clemente García Rodríguez" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="./assets/css/styles.css" type="text/css" />
-  </head>
-  <body>
-  
-    <script src="./assets/js/bootstrap.bundle.min.js"></script>
-    <script src="./assets/js/app.js"></script>
-  </body>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inconsolata:wght@300&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./assets/css/styles.css" type="text/css" />
+</head>
+<body>
+  <header>
+    <h1>&#9601;Battleship Game&#9601;</h1>
+    <p>Click and fire!💣</p>
+  </header>
+
+  <main id="game-board">
+    <div class="blank_guide"></div>
+    <div class="h_guide">1</div>
+    <div class="h_guide">2</div>
+    <div class="h_guide">3</div>
+    <div class="h_guide">4</div>
+    <div class="h_guide">5</div>
+    <div class="h_guide">6</div>
+    <div class="h_guide">7</div>
+    <div class="h_guide">8</div>
+    <div class="h_guide">9</div>
+    <div class="v_guide"><span>1</span></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="v_guide"><span>2</span></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="v_guide"><span>3</span></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="v_guide"><span>4</span></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="v_guide"><span>5</span></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="v_guide"><span>6</span></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="v_guide"><span>7</span></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="v_guide"><span>8</span></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="v_guide"><span>9</span></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+  </main>
+
+  <script src="./assets/js/app.js"></script>
+</body>
 </html>
