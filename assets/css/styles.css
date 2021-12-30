@@ -48,8 +48,15 @@ main > div.wrapper {
   font-size: 1em;
 }
 
+#game-result {
+  display: none;
+}
+
 /* --- HORIZONTAL GUIDES / VERTICAL GUIDES / SQUARES -- */
-.square, .blank_guide, .h_guide, .v_guide {
+.square,
+.blank_guide,
+.h_guide,
+.v_guide {
   width: 10%;
 }
 
@@ -63,7 +70,9 @@ main > div.wrapper {
   cursor: pointer;
 }
 
-.square::before, .v_guide::before { /* With this, we force the div aspect ratio to 1:1 (height = widt) */
+.square::before,
+.v_guide::before {
+  /* With this, we force the div aspect ratio to 1:1 (height = widt) */
   content: "";
   display: block;
   padding-top: 100%;
@@ -79,7 +88,7 @@ main > div.wrapper {
   display: flex;
   justify-content: end;
   align-items: stretch;
-} 
+}
 
 .v_guide > span {
   display: flex;
@@ -88,5 +97,25 @@ main > div.wrapper {
 
   background-color: #bdbdbd;
   border: 0.5px solid #d1d1d1;
-  width: 50%;  
+  width: 50%;
+}
+
+/* SQUARES STATUS */
+.square.sunken {
+  background-color: #f00;
+  border: 2px solid #ff5252;
+}
+
+.square.missed {
+  background-color: #00f;
+  border: 2px solid #4140ff;
+}
+
+.square.parts {
+  /* http://www.patternify.com/ */
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAICAYAAADA+m62AAAAAXNSR0IArs4c6QAAAEZJREFUKFNjZEAD/5cx/GeMYmBEF0cRACmCKUBXDFcIUwRSgMyGawQxsEmgi2HVDTMFWTFYITbHYyhG9x02PtgwYhSC1AAAzhwgUSG/vXsAAAAASUVORK5CYII=);
+}
+
+.square.block {
+  pointer-events: none;
 }

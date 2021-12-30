@@ -16,6 +16,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inconsolata:wght@300&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link rel="stylesheet" href="./assets/css/styles.css" type="text/css" />
 </head>
 <body>
@@ -23,116 +24,42 @@
     <header class="row justify-content-center mt-4 mb-2">
       <div class="col-12 text-center">
         <h1>&#9601;Battleship Game&#9601;</h1>
-        <p>Click and fire!💣</p>
+        <p>Click and fire!💣</p>        
+        <p class="bg-primary d-inline-block px-2 text-white rounded-3 shadow-sm">- <span class="fw-bold" id="remaining-parts"></span> Ship parts remaining -</p>        
+
+        <h1 class="m-0 text-warning" id="game-result"></h1>
       </div>
     </header>
 
     <main class="row">
       <div class="col-12 d-flex justify-content-center wrapper">
-        <div class="col-12 col-md-11 col-lg-8 col-xl-5 d-flex flex-wrap justify-content-center align-items-end align-content-end text-center p-0" id="game-board">
-          <div class="blank_guide"></div>
-          <div class="h_guide">1</div>
-          <div class="h_guide">2</div>
-          <div class="h_guide">3</div>
-          <div class="h_guide">4</div>
-          <div class="h_guide">5</div>
-          <div class="h_guide">6</div>
-          <div class="h_guide">7</div>
-          <div class="h_guide">8</div>
-          <div class="h_guide">9</div>
-          <div class="v_guide"><span>1</span></div>
-          <div class="square"></div>
-          <div class="square"></div>
-          <div class="square"></div>
-          <div class="square"></div>
-          <div class="square"></div>
-          <div class="square"></div>
-          <div class="square"></div>
-          <div class="square"></div>
-          <div class="square"></div>
-          <div class="v_guide"><span>2</span></div>
-          <div class="square"></div>
-          <div class="square"></div>
-          <div class="square"></div>
-          <div class="square"></div>
-          <div class="square"></div>
-          <div class="square"></div>
-          <div class="square"></div>
-          <div class="square"></div>
-          <div class="square"></div>
-          <div class="v_guide"><span>3</span></div>
-          <div class="square"></div>
-          <div class="square"></div>
-          <div class="square"></div>
-          <div class="square"></div>
-          <div class="square"></div>
-          <div class="square"></div>
-          <div class="square"></div>
-          <div class="square"></div>
-          <div class="square"></div>
-          <div class="v_guide"><span>4</span></div>
-          <div class="square"></div>
-          <div class="square"></div>
-          <div class="square"></div>
-          <div class="square"></div>
-          <div class="square"></div>
-          <div class="square"></div>
-          <div class="square"></div>
-          <div class="square"></div>
-          <div class="square"></div>
-          <div class="v_guide"><span>5</span></div>
-          <div class="square"></div>
-          <div class="square"></div>
-          <div class="square"></div>
-          <div class="square"></div>
-          <div class="square"></div>
-          <div class="square"></div>
-          <div class="square"></div>
-          <div class="square"></div>
-          <div class="square"></div>
-          <div class="v_guide"><span>6</span></div>
-          <div class="square"></div>
-          <div class="square"></div>
-          <div class="square"></div>
-          <div class="square"></div>
-          <div class="square"></div>
-          <div class="square"></div>
-          <div class="square"></div>
-          <div class="square"></div>
-          <div class="square"></div>
-          <div class="v_guide"><span>7</span></div>
-          <div class="square"></div>
-          <div class="square"></div>
-          <div class="square"></div>
-          <div class="square"></div>
-          <div class="square"></div>
-          <div class="square"></div>
-          <div class="square"></div>
-          <div class="square"></div>
-          <div class="square"></div>
-          <div class="v_guide"><span>8</span></div>
-          <div class="square"></div>
-          <div class="square"></div>
-          <div class="square"></div>
-          <div class="square"></div>
-          <div class="square"></div>
-          <div class="square"></div>
-          <div class="square"></div>
-          <div class="square"></div>
-          <div class="square"></div>
-          <div class="v_guide"><span>9</span></div>
-          <div class="square"></div>
-          <div class="square"></div>
-          <div class="square"></div>
-          <div class="square"></div>
-          <div class="square"></div>
-          <div class="square"></div>
-          <div class="square"></div>
-          <div class="square"></div>
-          <div class="square"></div>
-        </div>
+        <div class="col-12 col-md-11 col-lg-8 col-xl-5 d-flex flex-wrap justify-content-center align-items-end align-content-end text-center p-0" id="game-board"></div>
+      </div>
+
+      <div class="col-12 mt-4 d-flex justify-content-center align-items-center align-content-center gap-2">
+        <button type="button" class="btn btn-sm btn-light shadow-sm fw-bold" onclick="fire_input()"><i class="fas fa-bomb"></i> Fire</button>
+        <button type="button" class="btn btn-sm btn-light shadow-sm" onclick="show_ships()"><i class="fas fa-ship"></i> <span class="show_ships fw-bold">Show</span> Ships</button>
+        <button type="button" class="btn btn-sm btn-warning shadow-sm" onclick="location.reload()"><i class="fas fa-redo-alt"></i> Restart</button>
       </div>
     </main>
+  </div>
+  
+  <!-- Modal -->
+  <div class="modal bg-dark bg-opacity-50" tabindex="-1" id="fire-modal">
+    <div class="modal-dialog modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg-dark text-white py-1 px-3 border-0">
+          <h5 class="modal-title">Fire positions</h5>
+        </div>
+        <div class="modal-body bg-dark">
+          <input type="text" id="fire-positions" class="form-control form-control-sm shadow-none bg-dark text-white" placeholder="Coordinates (x, y)">
+        </div>
+        <div class="modal-footer bg-dark pt-1 pb-2 px-3 border-0">
+          <button type="button" class="btn btn-sm btn-secondary shadow-none" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-sm btn-danger shadow-none" onclick="fire_input(true)"><strong>Fire</strong> torpedo!</button>
+        </div>
+      </div>
+    </div>
   </div>
 
   <script src="./assets/js/bootstrap.bundle.min.js"></script>
